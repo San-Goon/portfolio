@@ -13,6 +13,26 @@ const skills = [
     title: "채워주세요",
     about: "채워주세요",
   },
+  {
+    icon: api,
+    title: "채워주세요",
+    about: "채워주세요",
+  },
+  {
+    icon: api,
+    title: "채워주세요",
+    about: "채워주세요",
+  },
+  {
+    icon: api,
+    title: "채워주세요",
+    about: "채워주세요",
+  },
+  {
+    icon: api,
+    title: "채워주세요",
+    about: "채워주세요",
+  },
 ];
 
 const About = () => {
