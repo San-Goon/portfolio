@@ -4,6 +4,15 @@ body {
   background-image: linear-gradient(to right bottom, #00f260, #0575e6);
   background-attachment: fixed;
   color: #354538;
+  font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to right bottom, #00f260, #0575e6);
 }
 
 a {
@@ -22,14 +31,6 @@ a:hover {
 
 .app__row {
   height: 90vh;
-}
-
-.app__sidebar {
-  background-color: #fff;
-  height: 100%;
-  border-radius: 20px;
-  padding: 25px 15px;
-  box-shadow: 0 0 10px black;
 }
 
 .app__main-content {
@@ -51,8 +52,8 @@ a:hover {
 }
 
 .sidebar__avatar {
-  height: 110px;
-  width: 120px;
+  height: 288px;
+  width: 216px;
   object-fit: contain;
   border-radius: 30px;
 }
@@ -66,9 +67,6 @@ a:hover {
   font-family: "Kashan Script";
   margin: 20px 0;
   font-size: 1.7rem;
-}
-
-.sidebar__name > span {
 }
 
 .sidebar__item {
@@ -129,7 +127,7 @@ a:hover {
   border-bottom: 4px solid #00f260;
 }
 
-.navbar__items {
+.navbar__item {
   margin-right: 20px;
   text-decoration: none;
   color: #354358;
@@ -150,8 +148,8 @@ a:hover {
   padding: 20px;
 }
 .about__intro {
-  font-size: 1.1rem;
-  padding: 20px;
+  font-size: 1rem;
+  padding: 20px 28px;
   margin: 10px 0;
 }
 
@@ -202,7 +200,7 @@ a:hover {
 .resume-card__heading,
 .resume-language__heading {
   margin-left: 10px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #354538;
 }
@@ -220,7 +218,7 @@ a:hover {
 
 .resume-card-details {
   font-size: 0.9rem;
-  padding-top: 20px;
+  padding-top: 5px;
 }
 
 /* bar */
@@ -243,4 +241,73 @@ a:hover {
   padding: 4px 14px;
   color: #fff;
   font-size: 0.9rem;
+}
+
+/* projects */
+.projects {
+  height: 70vh;
+  padding-top: 30px;
+  overflow-y: auto;
+}
+
+.projectCard__wrapper {
+  margin: 10px, 0;
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+}
+
+.projectCard__image {
+  width: 100%;
+  height: 80%;
+  border-radius: 30px;
+  border: 1px solid #00f260;
+  transition: transform 0.3s linear;
+}
+
+.projectCard__image:hover {
+  transform: scale(1.05);
+}
+.projectCard__icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.projectCard__title {
+  margin-top: 12px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects__navbar {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.projects__navbar > div {
+  margin: 0 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.projects__navbar-active {
+  color: #00f260;
+}
+
+@media (max-width: 600px) {
+  .app__main-content {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .navbar__active {
+    font-size: 1.5rem;
+  }
+
+  .navbar__item {
+    font-size: 1rem;
+  }
 }
