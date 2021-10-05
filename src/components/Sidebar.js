@@ -44,14 +44,14 @@ const Sidebar = () => {
           이력서 다운로드
         </div>
       </a>
-      <figure className="sidebar__social-icons my-2">
+      {/* <figure className="sidebar__social-icons my-2">
         <a href="">
           <img src="" alt="upInAir2" className="sidebar__icon mr-3" />
         </a>
         <a href="">
           <img src="" alt="upInAir2" className="sidebar__icon" />
         </a>
-      </figure>
+      </figure> */}
       <div className="sidebar__contact">
         <div className="sidebar__item sidebar__github">
           <a

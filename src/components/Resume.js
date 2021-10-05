@@ -34,7 +34,7 @@ const Resume = () => {
         <div className="col-lg-6 resume-card">
           <h4 className="resume-card__heading">학력</h4>
           <div className="resume-card__body">
-            <h5 className="resume-card__title">안양대학교 (2014-2020)</h5>
+            <h5 className="resume-card__title">안양대학교 졸업(2014-2020)</h5>
             <p className="resume-card__name">전기전자공학 전공</p>
             {/* <p className="resume-card__details">채워주세요</p> */}
           </div>

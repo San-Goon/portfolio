@@ -1,20 +1,106 @@
-import React, { useState } from "react";
-import data_projects from "./data/projects_data";
-import ProjectCard from "./ProjectCard";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Cards from "./Cards.js";
+import { Box } from "@material-ui/core";
+
 import { motion } from "framer-motion";
 
-const Projects = () => {
-  const [projects, setProjects] = useState(data_projects);
-  const [active, setActive] = useState("All");
-  const handleFilterCategory = (name) => {
-    const new_array = data_projects.filter((project) =>
-      project.category.includes(name)
-    );
-    setProjects(new_array);
-    setActive(name);
-  };
+const projects = [
+  // {
+  //   name: "",
+  //   subtitle: ``,
+  //   description: ``,
+  //   github_url: `https://github.com/San-Goon/`,
+  //   deployed_url: ``,
+  //   stacks: [""],
+  //   img: "",
+  // },
 
-  const project_variants = {
+  {
+    name: "SNS 사이트",
+    subtitle: `트위터처럼 자유롭게 이용할 수 있는 SNS 사이트`,
+    description: `Next.js와 Redux를 이용하여 페이지 제작 및 상태관리를 하였고\n
+    SSR을 구현하기 위해서 Node.js를 이용해 서버도 구축 해 보았습니다. 또한 \n
+    AWS에 사이트를 배포하였습니다. `,
+    github_url: `https://github.com/San-Goon/NodeBird-react`,
+    stacks: ["react", "next", "redux", "node", "mysql", "aws"],
+    deployed_url: `http://kanghun.xyz`,
+    img: "SNS.PNG",
+  },
+
+  {
+    name: "웹게임 사이트",
+    subtitle: `다양하고 간단한 웹게임들을 플레이 해 볼 수 있는 사이트`,
+    description: `React.js를 이용하여 제작하였고, Router를 사용했으며, JavaScript를 공부하며\n
+    간단한 게임들을 플레이 할 수 있도록 만든 사이트입니다.`,
+    github_url: `https://github.com/San-Goon/webgames-react-router`,
+    stacks: ["react", "javascript"],
+    deployed_url: `https://wonderful-curran-1ba79e.netlify.app/gugudan`,
+    img: "웹게임.PNG",
+  },
+  {
+    name: "Prototype Shop",
+    subtitle: `상품을 담고 제거할 수 있는 간단한 사이트`,
+    description: `React.js를 이용하여 제작하였고, 상품을 담고 제거할 수 있는 간단한 기능들만 담아놓은 웹 사이트입니다.`,
+    github_url: `https://github.com/San-Goon/webgames-react-router`,
+    stacks: ["react"],
+    deployed_url: `https://elegant-spence-5b3f4d.netlify.app/`,
+    img: "쇼핑몰.PNG",
+  },
+  {
+    name: "포트폴리오",
+    subtitle: `개인 포트폴리오 웹사이트`,
+    description: `React.js를 이용하여 개발한 페이지입니다.`,
+    github_url: `https://github.com/San-Goon/portfolio`,
+    stacks: ["react"],
+    deployed_url: ``,
+    img: "포트폴리오.PNG",
+  },
+  {
+    name: "스타벅스 메인페이지",
+    subtitle: `스타벅스 메인페이지를 그대로 제작한 사이트`,
+    description: `기본적인 HTML/CSS/JS 를 사용하여 제작한 페이지입니다.`,
+    github_url: `https://github.com/San-Goon/starbucks`,
+    deployed_url: `https://affectionate-jang-6f49b3.netlify.app/`,
+    stacks: ["html", "css", "javascript"],
+    img: "스타벅스.PNG",
+  },
+];
+
+const settings = {
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true,
+  speed: 500,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  initialSlide: 0,
+  swipeToSlide: true,
+  centerPadding: "0",
+  responsive: [
+    {
+      breakpoint: 1280,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 1920,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        dots: true,
+      },
+    },
+  ],
+};
+
+export default function AutoGrid() {
+  const projects_variants = {
     hidden: {
       opacity: 0,
     },
@@ -34,54 +120,19 @@ const Projects = () => {
   };
   return (
     <motion.div
-      className="container projects"
-      variants={project_variants}
+      className="projects2"
+      variants={projects_variants}
       initial="hidden"
       animate="visible"
       exit="exit"
     >
-      <div className="projects__navbar">
-        <div
-          className={active === "All" && "projects__navbar-active"}
-          onClick={() => {
-            setProjects(data_projects);
-            setActive("All");
-          }}
-        >
-          All
-        </div>
-        <div
-          className={active === "htmlcss" && "projects__navbar-active"}
-          onClick={() => handleFilterCategory("htmlcss")}
-        >
-          HTML/CSS
-        </div>
-        <div
-          className={active === "react" && "projects__navbar-active"}
-          onClick={() => handleFilterCategory("react")}
-        >
-          React
-        </div>
-        <div
-          className={active === "node.js" && "projects__navbar-active"}
-          onClick={() => handleFilterCategory("node.js")}
-        >
-          Node
-        </div>
-        <div
-          className={active === "typescript" && "projects__navbar-active"}
-          onClick={() => handleFilterCategory("typescript")}
-        >
-          TypeScript
-        </div>
-      </div>
-      <div className="row">
-        {projects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
+      <Slider {...settings}>
+        {projects.map((i, index) => (
+          <Box className="custom-slick" key={index.toString()}>
+            <Cards {...projects[index]} />
+          </Box>
         ))}
-      </div>
+      </Slider>
     </motion.div>
   );
-};
-
-export default Projects;
+}
