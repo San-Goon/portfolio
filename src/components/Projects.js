@@ -94,7 +94,7 @@ const settings = {
   speed: 500,
   slidesToShow: 2,
   slidesToScroll: 1,
-  initialSlide: 1,
+  initialSlide: 0,
   swipeToSlide: true,
   centerPadding: "0",
   arrows: false,
