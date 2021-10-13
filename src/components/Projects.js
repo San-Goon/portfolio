@@ -29,6 +29,24 @@ const projects = [
     deployed_url: `http://kanghun.xyz`,
     img: "SNS.PNG",
   },
+  {
+    name: "개인 BLOG",
+    subtitle: `각 프로젝트들의 수정계획, 개선예정사항 및 버그해결이력을 게시하는 개인 블로그`,
+    description: `Sanity와 Next.js를 이용하여 구축한 개인 개발 블로그입니다. 각 프로젝트들의 수정계획, 개선예정사항 및 버그해결이력을 게시할 예정이며 현재 블로그 작업중에 있습니다. `,
+    github_url: `https://github.com/San-Goon/next-blog`,
+    deployed_url: `https://cranky-golick-c731b4.netlify.app`,
+    stacks: ["react", "next", "sanity"],
+    img: "블로그.PNG",
+  },
+  {
+    name: "나만의 책장",
+    subtitle: `책,영상등 간단한 리뷰를 남길 수 있는 사이트`,
+    description: `React.js에 TypeScript를 사용하여 개발한 사이트입니다. redux를 이용하여 상태관리를 하였으며, ID:mark@test.com PW:fastcampus로 로그인 가능합니다.`,
+    github_url: `https://github.com/San-Goon/my-books`,
+    deployed_url: `https://flamboyant-meninsky-12c931.netlify.app/signin`,
+    stacks: ["react", "typescript", "redux"],
+    img: "MYBOOKS.PNG",
+  },
 
   {
     name: "웹게임 사이트",
@@ -55,7 +73,7 @@ const projects = [
     description: `React.js를 이용하여 개발한 페이지입니다.`,
     github_url: `https://github.com/San-Goon/portfolio`,
     stacks: ["react"],
-    deployed_url: ``,
+    deployed_url: `https://kanghun-portfolio.netlify.app/`,
     img: "포트폴리오.PNG",
   },
   {
@@ -76,9 +94,10 @@ const settings = {
   speed: 500,
   slidesToShow: 2,
   slidesToScroll: 1,
-  initialSlide: 0,
+  initialSlide: 1,
   swipeToSlide: true,
   centerPadding: "0",
+  arrows: false,
   responsive: [
     {
       breakpoint: 1280,

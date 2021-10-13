@@ -34,9 +34,9 @@ const About = () => {
         <br />
         <br />
         저는 <strong key={1}>HTML5, CSS3, Javascript(ES6+)</strong>를 기반으로
-        웹의 전반적인 지식을 가지고 있으며 특히 <strong key={1}> React </strong>
+        웹의 전반적인 지식을 가지고 있으며 특히
+        <strong key={1}> React </strong>
         를 사용한 Single Page Application 개발에 자신있습니다.
-        <br />
         <br />
       </h6>
     </motion.div>
