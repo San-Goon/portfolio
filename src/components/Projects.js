@@ -30,6 +30,16 @@ const projects = [
     img: "SNS.PNG",
   },
   {
+    name: "Slack 클론코딩",
+    subtitle: `Slack사이트를 React를 이용하여 제작한 사이트`,
+    description: `서버가 구현되어있는 상태에서 Typescript, React.js를 이용하여 제작하였고
+    redux대신 SWR을 이용하여 상태관리를 하였습니다. 또한 Socket.io를 사용하여 실시간채팅도 구현해보았습니다. 현재 배포문제가 있어 다른 링크로 대체했습니다.`,
+    github_url: `https://github.com/San-Goon/Slack`,
+    stacks: ["react", "typescript", "SWR", "webpack", "SocketIO"],
+    deployed_url: `http://sleact.nodebird.com`,
+    img: "Slack.PNG",
+  },
+  {
     name: "개인 BLOG",
     subtitle: `각 프로젝트들의 수정계획, 개선예정사항 및 버그해결이력을 게시하는 개인 블로그`,
     description: `Sanity와 Next.js를 이용하여 구축한 개인 개발 블로그입니다. 각 프로젝트들의 수정계획, 개선예정사항 및 버그해결이력을 게시할 예정이며 현재 블로그 작업중에 있습니다. `,
